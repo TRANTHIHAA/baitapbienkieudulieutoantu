@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <table width="100%">
+      <tr>
+          <th>Amount</th>
+          <th>From Currency</th>
+          <th>To Currency</th>
+          <th></th>
+      </tr>
+      <tr>
+          <td><input type="text"  id="nhap"></td>
+          <td><select name="Currency" id="n1">
+              <option value="a">VietNam</option>
+              <option value="b">USK</option>
+          </select></td>
+          <td><select name="Currency2" id="n2">
+              <option value="b">USK</option>
+              <option value="a">VietNam</option>
+          </select></td>
+          <td><button onclick="tinh()">Convert</button></td>
+      </tr>
+  </table>
+
+<br>
+<p id="Result"></p>
+</body>
+</html>
+<script>
+    function tinh(){
+        let sotien = document.getElementById('nhap').value;
+        let n1 = document.getElementById('n1').value;
+        let n2 =document.getElementById('n2').value;
+        let Result;
+        if(n1=="a"&& n2=="b"){
+            Result= "Result:"+(sotien/23000) +"$";
+        }
+        else if(n1=="b"&& n2=="a"){
+            Result= "Result:"+(sotien*23000) +"D";
+        }
+        else if(n1=="a"){
+            Result= "Result:"+(sotien)+ "D";
+        }
+        else{
+            Result= "Result:"+(sotien)+"D"
+        }
+        document.getElementById("Result").innerHTML= Result;
+
+    }
+
+</script>
